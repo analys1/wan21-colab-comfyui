@@ -4,7 +4,7 @@
   "nodes": [
     {
       "id": 1,
-      "type": "UNETLoader",
+      "type": "UnetLoaderGGUF",
       "pos": [
         40,
         100
@@ -27,11 +27,10 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "UNETLoader"
+        "Node name for S&R": "UnetLoaderGGUF"
       },
       "widgets_values": [
-        "wan2.1_i2v_480p_1.3B_bf16.safetensors",
-        "default"
+        "wan2.1-i2v-14b-480p-Q4_K_M.gguf"
       ]
     },
     {
@@ -627,7 +626,7 @@
   ],
   "groups": [
     {
-      "title": "1. Tải Model Wan 2.1",
+      "title": "1. Tải Model Wan 2.1 GGUF",
       "bounding": [
         20,
         40,
