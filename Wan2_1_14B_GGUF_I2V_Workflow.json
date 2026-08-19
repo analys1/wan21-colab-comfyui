@@ -1,6 +1,6 @@
 {
-  "last_node_id": 12,
-  "last_link_id": 14,
+  "last_node_id": 13,
+  "last_link_id": 16,
   "nodes": [
     {
       "id": 1,
@@ -149,7 +149,8 @@
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            5
+            5,
+            15
           ],
           "slot_index": 0
         },
@@ -168,18 +169,59 @@
       ]
     },
     {
+      "id": 13,
+      "type": "CLIPVisionEncode",
+      "pos": [
+        420,
+        470
+      ],
+      "size": [
+        320,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 4
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CLIP_VISION_OUTPUT",
+          "type": "CLIP_VISION_OUTPUT",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPVisionEncode"
+      },
+      "widgets_values": []
+    },
+    {
       "id": 6,
       "type": "CLIPTextEncode",
       "pos": [
         420,
-        480
+        600
       ],
       "size": [
         420,
         160
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -210,14 +252,14 @@
       "type": "CLIPTextEncode",
       "pos": [
         420,
-        690
+        810
       ],
       "size": [
         420,
         140
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -255,7 +297,7 @@
         240
       ],
       "flags": {},
-      "order": 7,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -274,12 +316,12 @@
           "link": 3
         },
         {
-          "name": "clip_vision",
-          "type": "CLIP_VISION",
-          "link": 4
+          "name": "clip_vision_output",
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 16
         },
         {
-          "name": "image",
+          "name": "start_image",
           "type": "IMAGE",
           "link": 5
         }
@@ -332,7 +374,7 @@
         220
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "properties": {
         "text": ""
@@ -353,7 +395,7 @@
         474
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -412,7 +454,7 @@
         146
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -456,7 +498,7 @@
         490
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -507,15 +549,15 @@
       3,
       0,
       7,
-      1,
+      2,
       "VAE"
     ],
     [
       4,
       4,
       0,
-      7,
-      2,
+      13,
+      0,
       "CLIP_VISION"
     ],
     [
@@ -523,7 +565,7 @@
       5,
       0,
       7,
-      3,
+      4,
       "IMAGE"
     ],
     [
@@ -540,6 +582,14 @@
       0,
       8,
       1,
+      "CONDITIONING"
+    ],
+    [
+      8,
+      7,
+      1,
+      8,
+      2,
       "CONDITIONING"
     ],
     [
@@ -591,12 +641,20 @@
       "IMAGE"
     ],
     [
-      8,
-      7,
+      15,
+      5,
+      0,
+      13,
       1,
-      8,
-      2,
-      "CONDITIONING"
+      "IMAGE"
+    ],
+    [
+      16,
+      13,
+      0,
+      7,
+      3,
+      "CLIP_VISION_OUTPUT"
     ]
   ],
   "groups": [
@@ -617,7 +675,7 @@
         400,
         40,
         460,
-        810
+        930
       ],
       "color": "#009688",
       "font_size": 24
