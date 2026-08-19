@@ -265,6 +265,11 @@
           "link": 6
         },
         {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 13
+        },
+        {
           "name": "vae",
           "type": "VAE",
           "link": 3
@@ -292,7 +297,9 @@
         {
           "name": "negative",
           "type": "CONDITIONING",
-          "links": null,
+          "links": [
+            8
+          ],
           "slot_index": 1
         },
         {
@@ -363,7 +370,7 @@
         {
           "name": "negative",
           "type": "CONDITIONING",
-          "link": 13
+          "link": 8
         },
         {
           "name": "latent_image",
@@ -572,8 +579,8 @@
       13,
       11,
       0,
-      8,
-      2,
+      7,
+      1,
       "CONDITIONING"
     ],
     [
@@ -583,6 +590,14 @@
       10,
       0,
       "IMAGE"
+    ],
+    [
+      8,
+      7,
+      1,
+      8,
+      2,
+      "CONDITIONING"
     ]
   ],
   "groups": [
