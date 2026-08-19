@@ -202,7 +202,7 @@
         "Node name for S&R": "CLIPTextEncode (Positive Prompt)"
       },
       "widgets_values": [
-        "breathtaking cinematic masterpiece, hyperrealistic, dynamic motion, volumetric lighting, photorealistic 8k, flawless quality"
+        "a cinematic shot with smooth camera movement, natural subject motion, atmospheric lighting, dynamic depth of field, high fidelity details"
       ]
     },
     {
@@ -240,7 +240,7 @@
         "Node name for S&R": "CLIPTextEncode (Negative Prompt)"
       },
       "widgets_values": [
-        "blurry, static, distortion, deformed hands, bad anatomy, low quality, jitter, watermark, oversaturated"
+        "blurry, static, distortion, deformed hands, bad anatomy, low quality, jitter, watermark, oversaturated, fast flickering"
       ]
     },
     {
@@ -338,7 +338,7 @@
         "text": ""
       },
       "widgets_values": [
-        "🌟 WAN 2.1 14B GGUF (CHẤT LƯỢNG CAO):\n\n• Model 14B cho chi tiết điện ảnh và độ ổn định cao hơn bản 1.3B.\n• YouTube Ngang: 832 x 480\n• Shorts/TikTok Dọc: 480 x 832\n• Khuyến nghị: 25-35 steps | CFG 6.0"
+        "🌟 WAN 2.1 14B GGUF (TỐI ƯU VRAM CHO COLAB T4):\n\n• Model 14B GGUF Q4_K_M cân bằng chất lượng điện ảnh & VRAM.\n• YouTube Ngang: 832 x 480 | Shorts/TikTok Dọc: 480 x 832\n• Thời lượng: 49 frames (~3s) hoặc 65 frames (~4s)\n• KSampler: 25-35 steps | CFG 5.0 - 6.0 | Euler / Simple\n• Ghi chú: Render độ phân giải gốc 480p, sau đó AI Upscale lên 1080p/4K trong hậu kỳ."
       ]
     },
     {

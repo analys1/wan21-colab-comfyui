@@ -203,7 +203,7 @@
         "Node name for S&R": "CLIPTextEncode (Positive Prompt)"
       },
       "widgets_values": [
-        "slow cinematic camera pan, realistic lighting, dynamic natural motion, highly detailed, 4k resolution"
+        "a cinematic shot with gentle camera motion, realistic lighting, dynamic natural movement, high detail depth"
       ]
     },
     {
@@ -339,7 +339,7 @@
         "text": ""
       },
       "widgets_values": [
-        "💡 HƯỚNG DẪN KÍCH THƯỚC:\n\n• YouTube Ngang (16:9):\n  Width: 832 | Height: 480\n\n• Shorts / TikTok Dọc (9:16):\n  Width: 480 | Height: 832\n\n• Thời lượng (Frames):\n  33 frames = 2s\n  49 frames = 3s (Chuẩn)\n  65 frames = 4s"
+        "💡 WAN 2.1 I2V 1.3B (RENDER SIÊU TỐC):\n\n• Phù hợp sản xuất hàng loạt YouTube Shorts/TikTok (~1-2 phút/clip).\n• YouTube Ngang: 832 x 480\n• Shorts/TikTok Dọc: 480 x 832\n• Thời lượng: 33 frames (~2s) hoặc 49 frames (~3s)\n• KSampler: 20-30 steps | CFG 5.0 - 6.0"
       ]
     },
     {

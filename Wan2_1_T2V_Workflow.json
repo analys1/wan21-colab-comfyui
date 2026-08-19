@@ -134,7 +134,7 @@
         "Node name for S&R": "CLIPTextEncode (Positive Prompt)"
       },
       "widgets_values": [
-        "a majestic cybernetic dragon soaring above glowing cyberpunk city skyscrapers at night, neon lights, volumetric rain, cinematic lighting, photorealistic 8k"
+        "a majestic cybernetic dragon soaring above glowing cyberpunk city skyscrapers at night, neon reflections, volumetric rain mist, cinematic slow camera movement, high atmospheric depth"
       ]
     },
     {
@@ -172,7 +172,7 @@
         "Node name for S&R": "CLIPTextEncode (Negative Prompt)"
       },
       "widgets_values": [
-        "blurry, low quality, distorted, deformed, watermark, oversaturated, static, cartoon"
+        "blurry, low quality, distorted, deformed, watermark, oversaturated, static, cartoon, glitch, sudden jumps"
       ]
     },
     {
@@ -227,7 +227,7 @@
         "text": ""
       },
       "widgets_values": [
-        "💡 CHỌN KÍCH THƯỚC TRONG EmptyWanVideoLatent:\n\n• 16:9 Ngang: Width 832 | Height 480\n• 9:16 Dọc Shorts: Width 480 | Height 832\n• Length: 49 frames (~3 giây mượt mà)"
+        "💡 WAN 2.1 TEXT-TO-VIDEO (1.3B):\n\n• 16:9 Ngang: Width 832 | Height 480\n• 9:16 Dọc Shorts: Width 480 | Height 832\n• Length: 49 frames (~3 giây) hoặc 65 frames (~4 giây)\n• KSampler: 25 - 35 steps | CFG 5.0 - 6.0"
       ]
     },
     {

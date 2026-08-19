@@ -230,7 +230,7 @@
         "Node name for S&R": "CLIPTextEncode (Positive Prompt)"
       },
       "widgets_values": [
-        "smooth cinematic transition, time-lapse morphing, fluid motion, high quality, 4k"
+        "a smooth cinematic camera transition seamlessly morphing from the starting scene to the ending scene, natural fluid motion, coherent spatial movement"
       ]
     },
     {
@@ -268,7 +268,7 @@
         "Node name for S&R": "CLIPTextEncode (Negative Prompt)"
       },
       "widgets_values": [
-        "blurry, distortion, sudden cuts, glitch, bad anatomy, deformed, low quality"
+        "blurry, distortion, sudden cuts, glitch, bad anatomy, deformed, low quality, unnatural flickering"
       ]
     },
     {
@@ -347,6 +347,27 @@
       ]
     },
     {
+      "id": 13,
+      "type": "Note",
+      "pos": [
+        1240,
+        600
+      ],
+      "size": [
+        315,
+        160
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "🌟 WAN 2.1 FIRST-LAST FRAME (MORPHING):\n\n• Biến hình chuyển cảnh mượt mà giữa Start Frame & End Frame.\n• YouTube: 832x480 | Shorts/TikTok: 480x832\n• Thời lượng: 49 frames (~3s) | CFG 5.0 - 6.0\n• Mẹo: Dùng 2 ảnh có góc máy/bố cục gần nhau để chuyển cảnh tự nhiên nhất."
+      ]
+    },
+    {
       "id": 9,
       "type": "KSampler",
       "pos": [
@@ -358,7 +379,7 @@
         474
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -417,7 +438,7 @@
         146
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -428,7 +449,7 @@
         {
           "name": "vae",
           "type": "VAE",
-          "link": 10
+          "link": 15
         }
       ],
       "outputs": [
@@ -461,7 +482,7 @@
         490
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -633,7 +654,7 @@
         760,
         40,
         810,
-        720
+        740
       ],
       "color": "#ff9800",
       "font_size": 24
