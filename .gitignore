@@ -1,0 +1,36 @@
+# Python & Jupyter Checkpoints
+__pycache__/
+*.py[cod]
+*.class
+.ipynb_checkpoints/
+
+# AI Model Files (Tránh đẩy nhầm model hàng chục GB lên GitHub)
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+*.pth
+*.bin
+*.onnx
+
+# Video & Image outputs
+output/
+outputs/
+*.mp4
+*.mkv
+*.avi
+*.mov
+*.webm
+
+# OS Temporary Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.BIN/
+.DS_Store
+
+# Virtual Environment & Secrets
+.env
+venv/
+.venv/
+env/
