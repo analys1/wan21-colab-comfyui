@@ -30,7 +30,7 @@
         "Node name for S&R": "UnetLoaderGGUF"
       },
       "widgets_values": [
-        "Wan2.1-I2V-14B-480P_Q4_K_M.gguf"
+        "wan2.1-i2v-14b-480p-Q4_K_M.gguf"
       ]
     },
     {
