@@ -1,0 +1,636 @@
+{
+  "last_node_id": 12,
+  "last_link_id": 14,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UnetLoaderGGUF",
+      "pos": [
+        40,
+        100
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnetLoaderGGUF"
+      },
+      "widgets_values": [
+        "Wan2.1-I2V-14B-480P_Q4_K_M.gguf"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        40,
+        240
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2,
+            12
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPLoader"
+      },
+      "widgets_values": [
+        "umt5_xxl_fp8_e4m3fn.safetensors",
+        "wan",
+        "default"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        40,
+        380
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            3,
+            10
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "wan_2.1_vae.safetensors"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CLIPVisionLoader",
+      "pos": [
+        40,
+        490
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPVisionLoader"
+      },
+      "widgets_values": [
+        "clip_vision_h.safetensors"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "LoadImage",
+      "pos": [
+        420,
+        100
+      ],
+      "size": [
+        320,
+        314
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "input_image.png",
+        "image"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        420,
+        480
+      ],
+      "size": [
+        420,
+        160
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode (Positive Prompt)"
+      },
+      "widgets_values": [
+        "breathtaking cinematic masterpiece, hyperrealistic, dynamic motion, volumetric lighting, photorealistic 8k, flawless quality"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CLIPTextEncode",
+      "pos": [
+        420,
+        690
+      ],
+      "size": [
+        420,
+        140
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            13
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode (Negative Prompt)"
+      },
+      "widgets_values": [
+        "blurry, static, distortion, deformed hands, bad anatomy, low quality, jitter, watermark, oversaturated"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "WanImageToVideo",
+      "pos": [
+        900,
+        100
+      ],
+      "size": [
+        330,
+        240
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 3
+        },
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 4
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": null,
+          "slot_index": 1
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            9
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WanImageToVideo"
+      },
+      "widgets_values": [
+        832,
+        480,
+        49,
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "type": "Note",
+      "pos": [
+        900,
+        390
+      ],
+      "size": [
+        330,
+        220
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "🌟 WAN 2.1 14B GGUF (CHẤT LƯỢNG CAO):\n\n• Model 14B cho chi tiết điện ảnh và độ ổn định cao hơn bản 1.3B.\n• YouTube Ngang: 832 x 480\n• Shorts/TikTok Dọc: 480 x 832\n• Khuyến nghị: 25-35 steps | CFG 6.0"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "KSampler",
+      "pos": [
+        1290,
+        100
+      ],
+      "size": [
+        315,
+        474
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 7
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 13
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        999888777,
+        "randomize",
+        25,
+        6.0,
+        "euler",
+        "simple",
+        1.0
+      ]
+    },
+    {
+      "id": 9,
+      "type": "VAEDecodeTiled",
+      "pos": [
+        1660,
+        100
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 11
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            14
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeTiled"
+      },
+      "widgets_values": [
+        512,
+        64
+      ]
+    },
+    {
+      "id": 10,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2030,
+        100
+      ],
+      "size": [
+        315,
+        490
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 16,
+        "loop_count": 0,
+        "filename_prefix": "Wan21_14B_I2V",
+        "format": "video/h264-mp4",
+        "pingpong": false,
+        "save_output": true
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      2,
+      0,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      3,
+      3,
+      0,
+      7,
+      1,
+      "VAE"
+    ],
+    [
+      4,
+      4,
+      0,
+      7,
+      2,
+      "CLIP_VISION"
+    ],
+    [
+      5,
+      5,
+      0,
+      7,
+      3,
+      "IMAGE"
+    ],
+    [
+      6,
+      6,
+      0,
+      7,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      7,
+      0,
+      8,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      9,
+      7,
+      2,
+      8,
+      3,
+      "LATENT"
+    ],
+    [
+      10,
+      3,
+      0,
+      9,
+      1,
+      "VAE"
+    ],
+    [
+      11,
+      8,
+      0,
+      9,
+      0,
+      "LATENT"
+    ],
+    [
+      12,
+      2,
+      0,
+      11,
+      0,
+      "CLIP"
+    ],
+    [
+      13,
+      11,
+      0,
+      8,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      14,
+      9,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "1. Tải Mô Hình 14B GGUF (Loaders)",
+      "bounding": [
+        20,
+        40,
+        355,
+        540
+      ],
+      "color": "#673ab7",
+      "font_size": 24
+    },
+    {
+      "title": "2. Ảnh Đầu Vào & Prompt",
+      "bounding": [
+        400,
+        40,
+        460,
+        810
+      ],
+      "color": "#009688",
+      "font_size": 24
+    },
+    {
+      "title": "3. Tạo Latent & Lấy Mẫu 14B (Sampler)",
+      "bounding": [
+        880,
+        40,
+        745,
+        600
+      ],
+      "color": "#ff9800",
+      "font_size": 24
+    },
+    {
+      "title": "4. Giải Mã VAE & Xuất Video MP4",
+      "bounding": [
+        1640,
+        40,
+        730,
+        600
+      ],
+      "color": "#4caf50",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
