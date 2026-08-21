@@ -42,7 +42,7 @@
       ],
       "size": [
         315,
-        82
+        106
       ],
       "flags": {},
       "order": 1,
@@ -64,7 +64,7 @@
       "widgets_values": [
         "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
         "wan",
-        "default"
+        "cpu"
       ]
     },
     {
@@ -371,7 +371,7 @@
       ],
       "size": [
         330,
-        220
+        250
       ],
       "flags": {},
       "order": 9,
@@ -380,7 +380,7 @@
         "text": ""
       },
       "widgets_values": [
-        "⚡ WAN 2.1 14B GGUF (BẢN TỐI ƯU TỐC ĐỘ SIÊU TỐC):\n\n• Steps: 20 steps (Render chỉ mất ~2.5 - 3 phút, tiết kiệm 30% thời gian).\n• YouTube Ngang: 832 x 480 | Shorts/TikTok Dọc: 480 x 832\n• Thời lượng: 49 frames (~3s) hoặc 33 frames (~2s cho Shorts)\n• CFG: 5.5 - 6.0 | Sampler: Euler / Simple\n• Ghi chú: Render độ phân giải 480p siêu tốc, sau đó AI Upscale lên 1080p/4K trong hậu kỳ."
+        "🌟 CẤU HÌNH WAN 2.1 14B GGUF ĐỈNH CAO (SIÊU TỐC & SẮC NÉT):\n\n• Device Text Encoder: Đặt 'cpu' (Giải phóng 5.1GB VRAM, chống nghẽn bộ nhớ).\n• Sampler: 'uni_pc' | Scheduler: 'simple' (Cho hình ảnh cực nét, triệt tiêu mờ).\n• Steps: 20 steps | CFG: 5.5 (Render trong ~2.5 - 3 phút).\n• Video Ngang (YouTube 16:9): 832 x 480\n• Video Dọc (Shorts/TikTok 9:16): 480 x 832 (Đặt length = 33 frames ~ 1.5 phút)."
       ]
     },
     {
@@ -436,8 +436,8 @@
         999888777,
         "randomize",
         20,
-        6.0,
-        "euler",
+        5.5,
+        "uni_pc",
         "simple",
         1.0
       ]

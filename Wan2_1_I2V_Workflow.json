@@ -65,7 +65,7 @@
       "widgets_values": [
         "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
         "wan",
-        "default"
+        "cpu"
       ]
     },
     {
@@ -436,9 +436,9 @@
       "widgets_values": [
         123456789,
         "randomize",
-        25,
-        6.0,
-        "euler",
+        20,
+        5.5,
+        "uni_pc",
         "simple",
         1.0
       ]
