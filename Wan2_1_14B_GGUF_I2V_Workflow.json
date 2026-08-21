@@ -244,7 +244,7 @@
         "Node name for S&R": "CLIPTextEncode (Positive Prompt)"
       },
       "widgets_values": [
-        "a cinematic shot with smooth camera movement, natural subject motion, atmospheric lighting, dynamic depth of field, high fidelity details"
+        "The camera slowly pushes forward with smooth cinematic movement. The subject maintains natural subtle motion, soft atmospheric lighting, photorealistic textures, high fidelity details."
       ]
     },
     {
@@ -282,7 +282,7 @@
         "Node name for S&R": "CLIPTextEncode (Negative Prompt)"
       },
       "widgets_values": [
-        "blurry, static, distortion, deformed hands, bad anatomy, low quality, jitter, watermark, oversaturated, fast flickering"
+        "flickering, jitter, sudden camera shake, blurry, distorted, deformed, morphing, low quality, static noise, unnatural movements"
       ]
     },
     {
@@ -380,7 +380,7 @@
         "text": ""
       },
       "widgets_values": [
-        "🌟 CẤU HÌNH WAN 2.1 14B GGUF ĐỈNH CAO (SIÊU TỐC & SẮC NÉT):\n\n• Device Text Encoder: Đặt 'cpu' (Giải phóng 5.1GB VRAM, chống nghẽn bộ nhớ).\n• Sampler: 'uni_pc' | Scheduler: 'simple' (Cho hình ảnh cực nét, triệt tiêu mờ).\n• Steps: 20 steps | CFG: 5.5 (Render trong ~2.5 - 3 phút).\n• Video Ngang (YouTube 16:9): 832 x 480\n• Video Dọc (Shorts/TikTok 9:16): 480 x 832 (Đặt length = 33 frames ~ 1.5 phút)."
+        "📋 WAN 2.1 14B GGUF (VRAM-CONSTRAINED BASELINE):\n\n• Device Text Encoder: Đặt 'cpu' (Giảm áp lực VRAM trên GPU 16GB).\n• Sampler: 'uni_pc' | Scheduler: 'simple' (CFG: 5.0 - 5.5).\n• Seed: Đặt 'fixed' để A/B test prompt & thông số chuẩn xác.\n• Khung hình: 832x480 (YouTube 16:9) | 480x832 (Shorts 9:16).\n• Độ dài: 33 frames (~2s Preview) | 49 frames (~3s Production).\n• Hậu kỳ: Wan 480p @ 16fps -> AI Upscale 1080p/4K -> RIFE 24/30fps."
       ]
     },
     {
@@ -433,8 +433,8 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        999888777,
-        "randomize",
+        123456789,
+        "fixed",
         20,
         5.5,
         "uni_pc",
